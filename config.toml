@@ -1,0 +1,34 @@
+baseURL = "https://trendfind.online/"
+languageCode = "pt-pt"
+title = "TrendFind"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+  author = "contabilidade"
+  description = "Tendências, tecnologia e inovação."
+  ShowReadingTime = true
+  defaultTheme = "auto"
+  disableThemeToggle = false
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Início"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "sobre"
+    name = "Sobre"
+    url = "/sobre/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "contactos"
+    name = "Contactos"
+    url = "/contactos/"
+    weight = 3
+
+[pagination]
+  pagerSize = 10
