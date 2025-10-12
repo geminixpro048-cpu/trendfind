@@ -25,6 +25,7 @@ images = ["/images/default.jpg"]
 DateFormat = "2006-01-02"
 defaultTheme = "auto"
 ShowReadingTime = true
+ShowBreadCrumbs = true
 ShowShareButtons = true
 ShowPostNavLinks = true
 ShowCodeCopyButtons = true
@@ -33,10 +34,7 @@ ShowToc = false
 UseHugoToc = false
 mainSections = ["posts"]
 ShowFullTextinRSS = true
-
-[params.homeInfoParams]
-Title = "🚀 Welcome to TrendFind"
-Content = "Discover AI-generated insights on technology, innovation, and the future — automatically created by the TrendFind Autopilot."
+homeInfoParams = false
 
 [menu]
   [[menu.main]]
