@@ -1,0 +1,64 @@
+[2025-10-12T00:12:49.972465] 🚀 Iniciando geração automática de artigo (TrendFind Autopilot)...
+[2025-10-12T00:12:49.972823] 🧠 Tópico escolhido: Sustainability Tech
+[2025-10-12T00:12:50.186017] ⚠️ Modelo mistralai/mistral-7b-instruct:free falhou: 401 - {"error":{"message":"No auth credentials found","code":401}}
+[2025-10-12T00:12:50.411721] ⚠️ Modelo deepseek/deepseek-r1:free falhou: 401 - {"error":{"message":"No auth credentials found","code":401}}
+[2025-10-12T00:12:50.577521] ⚠️ Modelo x-ai/grok-4-fast:free falhou: 401 - {"error":{"message":"No auth credentials found","code":401}}
+[2025-10-12T00:12:50.577792] ❌ Falha na geração de conteúdo (sem resposta válida).
+[2025-10-12T00:12:50.577931] 🏁 Processo concluído.
+
+[2025-10-12T00:16:24.756153] 🚀 Iniciando geração automática de artigo (TrendFind Autopilot)...
+[2025-10-12T00:16:24.756339] 🧠 Tópico escolhido: Futurism
+[2025-10-12T00:16:37.289644] ✅ Artigo criado: /home/asciix/trendfind/content/posts/s-json.md
+[2025-10-12T00:16:37.289744] 🏁 Processo concluído.
+
+[2025-10-12T00:21:48.950515] 🚀 Iniciando geração automática (TrendFind Autopilot v4.1)...
+[2025-10-12T00:21:48.950779] 🧠 Tópico escolhido: Smart Cities
+[2025-10-12T00:22:05.508336] ⚠️ JSON inválido, tentar extração manual.
+[2025-10-12T00:22:05.509768] ✅ Artigo criado com sucesso: /home/asciix/trendfind/content/posts/the-future-of-urban-living.md
+[2025-10-12T00:22:05.509850] 🏁 Processo concluído.
+
+[2025-10-12T00:24:05.480151] 🚀 Iniciando geração automática (TrendFind Autopilot v4.2)...
+[2025-10-12T00:24:05.480454] 🧠 Tópico escolhido: Smart Cities
+[2025-10-12T00:24:06.440795] ⚠️ JSON inválido, fallback manual.
+[2025-10-12T00:24:06.442025] ✅ Artigo criado com sucesso: /home/asciix/trendfind/content/posts/smart-cities.md
+[2025-10-12T00:24:06.442108] 🏁 Processo concluído.
+
+[2025-10-12T00:27:00.157928] 🚀 Iniciando geração automática (TrendFind Autopilot v4.3)...
+[2025-10-12T00:27:00.158313] 🧠 Tópico escolhido: Digital Transformation
+[2025-10-12T00:27:01.464487] ⚠️ JSON inválido, fallback manual.
+[2025-10-12T00:27:01.464996] ❗ Corpo vazio — regenerando com fallback textual...
+[2025-10-12T00:29:46.995338] 🚀 Iniciando geração automática (TrendFind Autopilot v4.4)...
+[2025-10-12T00:29:46.995773] 🧠 Tópico escolhido: Futurism
+[2025-10-12T00:29:46.995887] 💡 Tentando modelo: mistralai/mistral-7b-instruct:free
+[2025-10-12T00:29:47.820466] ⚠️ Modelo mistralai/mistral-7b-instruct:free retornou JSON inválido.
+[2025-10-12T00:29:47.820622] 💡 Tentando modelo: deepseek/deepseek-r1:free
+[2025-10-12T00:29:48.276231] ⚠️ Modelo deepseek/deepseek-r1:free falhou: 429
+[2025-10-12T00:29:48.276429] 💡 Tentando modelo: x-ai/grok-4-fast:free
+[2025-10-12T00:29:48.668574] ⚠️ Modelo x-ai/grok-4-fast:free falhou: 404
+[2025-10-12T00:29:48.668770] ❗ Todos os modelos falharam JSON — fallback textual...
+[2025-10-12T12:02:24.313478] 🚀 Iniciando geração automática (TrendFind Autopilot v4.5)...
+[2025-10-12T12:02:24.315593] 🧠 Tópico escolhido: Artificial Intelligence
+[2025-10-12T12:02:24.315699] 💡 Tentando modelo: mistralai/mistral-7b-instruct:free
+[2025-10-12T12:02:25.033140] ⚠️ mistralai/mistral-7b-instruct:free retornou JSON inválido.
+[2025-10-12T12:02:25.033315] 💡 Tentando modelo: deepseek/deepseek-r1-0528:free
+[2025-10-12T12:02:25.549322] ⚠️ deepseek/deepseek-r1-0528:free → Rate limit (429). Aguardando 8s...
+[2025-10-12T12:02:33.549848] 💡 Tentando modelo: mistralai/devstral-small:free
+[2025-10-12T12:02:33.829581] ⚠️ mistralai/devstral-small:free → Modelo não encontrado (404).
+[2025-10-12T12:02:33.829771] 💡 Tentando modelo: zhipu-ai/glm-4-9b-chat:free
+[2025-10-12T12:02:34.084865] ⚠️ zhipu-ai/glm-4-9b-chat:free → Falhou (400) {"error":{"message":"zhipu-ai/glm-4-9b-chat:free is not a valid model ID","code":400},"user_id":"use
+[2025-10-12T12:02:34.085052] 💡 Tentando modelo: qwen/qwq-32b:free
+[2025-10-12T12:02:34.449377] ⚠️ qwen/qwq-32b:free → Modelo não encontrado (404).
+[2025-10-12T12:02:34.449722] 💡 Tentando modelo: google/gemma-2-9b-it:free
+[2025-10-12T12:02:55.459181] ⚠️ google/gemma-2-9b-it:free retornou JSON inválido.
+[2025-10-12T12:02:55.459347] 💡 Tentando modelo: 01-ai/yi-large:free
+[2025-10-12T12:02:55.700588] ⚠️ 01-ai/yi-large:free → Modelo não encontrado (404).
+[2025-10-12T12:02:55.700781] 💡 Tentando modelo: x-ai/grok-2:free
+[2025-10-12T12:02:55.921797] ⚠️ x-ai/grok-2:free → Modelo não encontrado (404).
+[2025-10-12T12:02:55.921977] 💡 Tentando modelo: anthropic/claude-3-haiku:free
+[2025-10-12T12:02:56.120819] ⚠️ anthropic/claude-3-haiku:free → Modelo não encontrado (404).
+[2025-10-12T12:02:56.121010] ❗ Nenhum modelo devolveu JSON válido — usando fallback textual...
+[2025-10-12T12:02:56.121078] 💬 Fallback textual → mistralai/mistral-7b-instruct:free
+[2025-10-12T12:03:22.802441] ✅ Conteúdo gerado via fallback textual com mistralai/mistral-7b-instruct:free
+[2025-10-12T12:03:22.827149] ✅ Artigo completo criado: /home/asciix/trendfind/content/posts/artificial-intelligence.md
+[2025-10-12T12:03:22.827257] 🏁 Processo concluído.
+
