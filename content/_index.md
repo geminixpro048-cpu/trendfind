@@ -1,11 +1,15 @@
 ---
 title: "Welcome to TrendFind"
-description: "Your AI-powered hub for technology, innovation, and the future."
+layout: "list"
+description: "Explore the latest insights in Technology, AI, and Innovation — powered by TrendFind Autopilot."
+summary: "Your daily source for trending topics in Artificial Intelligence, Technology, and Innovation."
+draft: false
 ---
 
-# 🌍 Welcome to TrendFind
+## Welcome to TrendFind 🚀
 
-Explore AI-generated insights on **technology**, **innovation**, and **future trends** — automatically created by the **TrendFind Autopilot**.
+Your daily source for trending topics in **Artificial Intelligence**, **Technology**, and **Innovation** — fully automated by TrendFind Autopilot.
 
-Stay curious. Stay ahead.
- 
+Stay updated with the latest articles on **AI breakthroughs**, **future tech**, **sustainability**, **blockchain**, **smart cities**, and **digital transformation**.
+
+Browse below for the newest posts 👇
