@@ -6,7 +6,7 @@ slug: "understanding-quantum-computing-the-next-frontier-in-technology"
 description: "An in-depth look into the world of quantum computing, its potential, and the challenges it faces."
 keywords: ["Quantum Computing", "Technology", "Future Trends", "Innovation"]
 tags: ["Quantum Computing", "Technology", "Future Trends", "Innovation"]
-featured_image: "/images/understanding-quantum-computing-the-next-frontier-in-technology.jpg"
+images: ["/understanding-quantum-computing-the-next-frontier-in-technology.jpg"]
 canonicalURL: "https://www.trendfind.online/posts/understanding-quantum-computing-the-next-frontier-in-technology/"
 og_title: "Understanding Quantum Computing: The Next Frontier in Technology"
 og_description: "An in-depth look into the world of quantum computing, its potential, and the challenges it faces."
