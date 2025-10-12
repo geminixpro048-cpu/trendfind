@@ -1,0 +1,11 @@
+[
+  {
+    "model": "mistralai/mistral-7b-instruct:free",
+    "status": "invalid_json",
+    "latency": 0.49
+  },
+  {
+    "model": "deepseek/deepseek-r1:free",
+    "status": "rate_limited"
+  }
+]

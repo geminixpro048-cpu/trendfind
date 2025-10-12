@@ -1,0 +1,202 @@
+[
+  {
+    "model": "deepseek/deepseek-chat-v3.1:free",
+    "status": "not_found",
+    "latency": 0.34
+  },
+  {
+    "model": "openai/gpt-oss-20b:free",
+    "status": "ok",
+    "latency": 3.3
+  },
+  {
+    "model": "z-ai/glm-4.5-air:free",
+    "status": "ok",
+    "latency": 9.44
+  },
+  {
+    "model": "qwen/qwen3-coder:free",
+    "status": "rate_limited",
+    "latency": 0.52
+  },
+  {
+    "model": "moonshotai/kimi-k2:free",
+    "status": "not_found",
+    "latency": 0.24
+  },
+  {
+    "model": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+    "status": "ok",
+    "latency": 2.47
+  },
+  {
+    "model": "google/gemma-3n-e2b-it:free",
+    "status": "error_400",
+    "latency": 0.3
+  },
+  {
+    "model": "tencent/hunyuan-a13b-instruct:free",
+    "status": "not_found",
+    "latency": 0.7
+  },
+  {
+    "model": "tngtech/deepseek-r1t2-chimera:free",
+    "status": "invalid_json",
+    "latency": 7.79
+  },
+  {
+    "model": "mistralai/mistral-small-3.2-24b-instruct:free",
+    "status": "invalid_json",
+    "latency": 1.43
+  },
+  {
+    "model": "moonshotai/kimi-dev-72b:free",
+    "status": "invalid_json",
+    "latency": 4.71
+  },
+  {
+    "model": "deepseek/deepseek-r1-0528-qwen3-8b:free",
+    "status": "ok",
+    "latency": 2.28
+  },
+  {
+    "model": "deepseek/deepseek-r1-0528:free",
+    "status": "rate_limited",
+    "latency": 0.37
+  },
+  {
+    "model": "mistralai/devstral-small-2505:free",
+    "status": "invalid_json",
+    "latency": 3.19
+  },
+  {
+    "model": "google/gemma-3n-e4b-it:free",
+    "status": "error_400",
+    "latency": 0.43
+  },
+  {
+    "model": "meta-llama/llama-3.3-8b-instruct:free",
+    "status": "ok",
+    "latency": 1.33
+  },
+  {
+    "model": "qwen/qwen3-4b:free",
+    "status": "ok",
+    "latency": 3.77
+  },
+  {
+    "model": "qwen/qwen3-30b-a3b:free",
+    "status": "ok",
+    "latency": 3.15
+  },
+  {
+    "model": "qwen/qwen3-14b:free",
+    "status": "ok",
+    "latency": 4.91
+  },
+  {
+    "model": "tngtech/deepseek-r1t-chimera:free",
+    "status": "invalid_json",
+    "latency": 8.05
+  },
+  {
+    "model": "microsoft/mai-ds-r1:free",
+    "status": "ok",
+    "latency": 4.24
+  },
+  {
+    "model": "arliai/qwq-32b-arliai-rpr-v1:free",
+    "status": "ok",
+    "latency": 6.04
+  },
+  {
+    "model": "shisa-ai/shisa-v2-llama3.3-70b:free",
+    "status": "invalid_json",
+    "latency": 3.76
+  },
+  {
+    "model": "agentica-org/deepcoder-14b-preview:free",
+    "status": "not_found",
+    "latency": 0.48
+  },
+  {
+    "model": "meta-llama/llama-4-maverick:free",
+    "status": "ok",
+    "latency": 1.73
+  },
+  {
+    "model": "meta-llama/llama-4-scout:free",
+    "status": "ok",
+    "latency": 1.43
+  },
+  {
+    "model": "qwen/qwen2.5-vl-32b-instruct:free",
+    "status": "invalid_json",
+    "latency": 4.53
+  },
+  {
+    "model": "deepseek/deepseek-chat-v3-0324:free",
+    "status": "rate_limited",
+    "latency": 0.3
+  },
+  {
+    "model": "mistralai/mistral-small-3.1-24b-instruct:free",
+    "status": "ok",
+    "latency": 4.19
+  },
+  {
+    "model": "google/gemma-3-4b-it:free",
+    "status": "error_400",
+    "latency": 0.42
+  },
+  {
+    "model": "google/gemma-3-12b-it:free",
+    "status": "error_400",
+    "latency": 0.27
+  },
+  {
+    "model": "nousresearch/deephermes-3-llama-3-8b-preview:free",
+    "status": "invalid_json",
+    "latency": 2.5
+  },
+  {
+    "model": "google/gemma-3-27b-it:free",
+    "status": "ok",
+    "latency": 2.53
+  },
+  {
+    "model": "cognitivecomputations/dolphin3.0-mistral-24b:free",
+    "status": "ok",
+    "latency": 1.64
+  },
+  {
+    "model": "mistralai/mistral-small-24b-instruct-2501:free",
+    "status": "invalid_json",
+    "latency": 2.84
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-llama-70b:free",
+    "status": "ok",
+    "latency": 3.44
+  },
+  {
+    "model": "deepseek/deepseek-r1:free",
+    "status": "ok",
+    "latency": 12.57
+  },
+  {
+    "model": "google/gemini-2.0-flash-exp:free",
+    "status": "rate_limited",
+    "latency": 0.34
+  },
+  {
+    "model": "meta-llama/llama-3.3-70b-instruct:free",
+    "status": "rate_limited",
+    "latency": 1.12
+  },
+  {
+    "model": "qwen/qwen-2.5-coder-32b-instruct:free",
+    "status": "rate_limited",
+    "latency": 0.31
+  }
+]

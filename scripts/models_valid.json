@@ -1,0 +1,19 @@
+[
+  "openai/gpt-oss-20b:free",
+  "z-ai/glm-4.5-air:free",
+  "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+  "deepseek/deepseek-r1-0528-qwen3-8b:free",
+  "meta-llama/llama-3.3-8b-instruct:free",
+  "qwen/qwen3-4b:free",
+  "qwen/qwen3-30b-a3b:free",
+  "qwen/qwen3-14b:free",
+  "microsoft/mai-ds-r1:free",
+  "arliai/qwq-32b-arliai-rpr-v1:free",
+  "meta-llama/llama-4-maverick:free",
+  "meta-llama/llama-4-scout:free",
+  "mistralai/mistral-small-3.1-24b-instruct:free",
+  "google/gemma-3-27b-it:free",
+  "cognitivecomputations/dolphin3.0-mistral-24b:free",
+  "deepseek/deepseek-r1-distill-llama-70b:free",
+  "deepseek/deepseek-r1:free"
+]

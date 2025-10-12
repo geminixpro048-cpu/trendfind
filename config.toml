@@ -1,34 +1,58 @@
-baseURL = "https://trendfind.online/"
-languageCode = "pt-pt"
+baseURL = "https://www.trendfind.online/"
+languageCode = "en-us"
 title = "TrendFind"
 theme = "PaperMod"
-paginate = 10
-
-[params]
-  author = "contabilidade"
-  description = "Tendências, tecnologia e inovação."
-  ShowReadingTime = true
-  defaultTheme = "auto"
-  disableThemeToggle = false
-
-[menu]
-  [[menu.main]]
-    identifier = "home"
-    name = "Início"
-    url = "/"
-    weight = 1
-
-  [[menu.main]]
-    identifier = "sobre"
-    name = "Sobre"
-    url = "/sobre/"
-    weight = 2
-
-  [[menu.main]]
-    identifier = "contactos"
-    name = "Contactos"
-    url = "/contactos/"
-    weight = 3
+themesDir = "themes"
+enableRobotsTXT = true
+canonifyURLs = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
 
 [pagination]
   pagerSize = 10
+
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+env = "production"
+author = "TrendFind Autopilot"
+description = "AI-powered daily insights on technology, innovation, and futurism."
+keywords = ["AI", "Technology", "Innovation", "Futurism", "TrendFind"]
+images = ["/images/default.jpg"]
+DateFormat = "2006-01-02"
+defaultTheme = "auto"
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowCodeCopyButtons = true
+disableThemeToggle = false
+ShowToc = false
+UseHugoToc = false
+mainSections = ["posts"]
+ShowFullTextinRSS = true
+
+[params.homeInfoParams]
+Title = "🚀 Welcome to TrendFind"
+Content = "Discover AI-generated insights on technology, innovation, and the future — automatically created by the TrendFind Autopilot."
+
+[menu]
+  [[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 1
+
+  [[menu.main]]
+  identifier = "articles"
+  name = "Articles"
+  url = "/posts/"
+  weight = 2
+
+  [[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 3
