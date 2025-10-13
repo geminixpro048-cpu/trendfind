@@ -1,187 +1,165 @@
 #!/usr/bin/env python3
-# TrendFind Autopilot v5.1
-# Gera artigos automáticos (texto + imagem) com modelos gratuitos do OpenRouter
+# -*- coding: utf-8 -*-
+"""
+TrendFind Autopilot v5.2 — geração automática de artigos com imagens e SEO fixo
+Força prefixo /images/ em todas as imagens.
+"""
 
 import os
 import random
-import json
 import requests
 from datetime import datetime
 from dotenv import load_dotenv
-from time import sleep
 
-# Caminhos
-BASE_DIR = "/home/asciix/trendfind"
-CONTENT_DIR = f"{BASE_DIR}/content/posts"
-IMAGE_DIR = f"{BASE_DIR}/static/images"
-MODEL_FILE = f"{BASE_DIR}/scripts/models_valid.json"
+# Carregar variáveis do .env
+load_dotenv()
 
-# Configurações principais
-SITE_URL = "https://www.trendfind.online"
-MAX_MODELS = 3  # tenta até 3 modelos antes de fallback textual
-ARTICLE_TOPICS = [
-    "Artificial Intelligence", "Machine Learning", "Blockchain",
-    "Cybersecurity", "Green Energy", "Futurism", "Smart Cities",
-    "Quantum Computing", "Digital Transformation", "Web3"
+OPENROUTER_KEYS = [
+    os.getenv("OPENROUTER_API_KEY"),
+    os.getenv("OPENROUTER_API_KEY_2"),
 ]
 
-# ---- Funções utilitárias ----
+MODELS_PATH = "/home/asciix/trendfind/scripts/models_valid.json"
+BASE_PATH = "/home/asciix/trendfind"
+SITE_URL = "https://www.trendfind.online"
 
-def log(msg):
-    now = datetime.now().strftime("[%Y-%m-%d %H:%M:%S]")
-    print(f"{now} {msg}")
+TOPICS = [
+    "Artificial Intelligence", "Smart Cities", "Digital Transformation",
+    "Futurism", "Green Energy", "BioTech", "Web3", "Cybersecurity",
+    "Blockchain", "Sustainability Tech", "Quantum Computing"
+]
 
-def load_api_keys():
-    """Carrega múltiplas API Keys do .env"""
-    load_dotenv()
-    keys = []
-    for i in range(1, 6):
-        k = os.getenv(f"OPENROUTER_API_KEY_{i}")
-        if k:
-            keys.append(k.strip())
-    if not keys:
-        # fallback para a variável antiga
-        key = os.getenv("OPENROUTER_API_KEY")
-        if key:
-            keys.append(key.strip())
-    if not keys:
-        log("❌ Nenhuma chave OPENROUTER_API_KEY encontrada no .env")
-        exit(1)
-    return keys
 
-def next_key(keys, current):
-    idx = (keys.index(current) + 1) % len(keys)
-    return keys[idx]
+def choose_api_key():
+    """Alterna entre múltiplas chaves API."""
+    key = random.choice([k for k in OPENROUTER_KEYS if k])
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] 🔑 API Key ativa: ...{key[-6:]}")
+    return key
 
-def generate_image(slug, topic):
-    """Gera uma imagem via Unsplash"""
-    url = f"https://source.unsplash.com/1200x630/?{topic.replace(' ', '%20')}"
-    image_path = f"{IMAGE_DIR}/{slug}.jpg"
+
+def choose_model():
+    """Escolhe modelo aleatório a partir do ficheiro models_valid.json"""
+    import json
     try:
-        r = requests.get(url, timeout=10)
-        if r.status_code == 200:
-            with open(image_path, "wb") as f:
-                f.write(r.content)
-            log(f"🖼️  Imagem salva: {image_path}")
-        else:
-            log(f"⚠️  Falha ao obter imagem ({r.status_code}) → usando placeholder.")
-    except Exception as e:
-        log(f"⚠️  Erro ao gerar imagem: {e}")
-    return image_path
-
-def slugify(text):
-    return text.lower().replace(" ", "-").replace(":", "").replace("’", "").replace("'", "")
-
-# ---- Função principal ----
-
-def main():
-    log("🚀 Iniciando geração automática (TrendFind Autopilot v5.1)...")
-
-    os.makedirs(CONTENT_DIR, exist_ok=True)
-    os.makedirs(IMAGE_DIR, exist_ok=True)
-
-    api_keys = load_api_keys()
-    current_key = api_keys[0]
-    headers = {"Authorization": f"Bearer {current_key}", "Content-Type": "application/json"}
-
-    # Escolher tópico aleatório
-    topic = random.choice(ARTICLE_TOPICS)
-    log(f"🧠 Tópico escolhido: {topic}")
-
-    # Carregar modelos válidos
-    models = []
-    try:
-        with open(MODEL_FILE, "r") as f:
+        with open(MODELS_PATH, "r") as f:
             models = json.load(f)
+        return random.choice(models)
     except Exception:
-        log("⚠️  Falha ao carregar models_valid.json, usando fallback.")
-        models = ["mistralai/mistral-7b-instruct:free", "deepseek/deepseek-r1:free"]
+        return "mistralai/mistral-7b-instruct:free"
 
-    slug = slugify(topic)
-    filename = f"{CONTENT_DIR}/{slug}.md"
-    image_path = generate_image(slug, topic)
 
-    content = None
-    model_used = None
+def generate_article(topic):
+    """Gera conteúdo via OpenRouter"""
+    key = choose_api_key()
+    model = choose_model()
+    headers = {
+        "Authorization": f"Bearer {key}",
+        "HTTP-Referer": SITE_URL,
+        "X-Title": "TrendFind Autopilot"
+    }
 
-    for model in models[:MAX_MODELS]:
-        log(f"💡 Tentando modelo: {model}")
-        headers["Authorization"] = f"Bearer {current_key}"
-        payload = {
-            "model": model,
-            "messages": [
-                {"role": "system", "content": "Write a detailed SEO-friendly tech article in Markdown. Include title, description, tags and body as JSON."},
-                {"role": "user", "content": f"Generate a complete tech article about {topic}. Format strictly as JSON with fields title, description, tags, and body."}
-            ],
-            "max_tokens": 1200,
-            "temperature": 0.8,
-        }
+    prompt = f"""
+    Write a complete Markdown blog article about {topic}.
+    Include title, description, tags, and body in JSON format like:
+    {{
+      "title": "...",
+      "description": "...",
+      "tags": ["tag1","tag2"],
+      "body": "# Heading..."
+    }}
+    """
 
-        try:
-            resp = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload, timeout=40)
-            if resp.status_code == 429:
-                log(f"⚠️  {model} → Rate limit (429). Mudando de chave...")
-                current_key = next_key(api_keys, current_key)
-                sleep(3)
-                continue
-            elif resp.status_code != 200:
-                log(f"⚠️  {model} → Falhou ({resp.status_code}) {resp.text[:80]}")
-                continue
+    try:
+        resp = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers=headers,
+            json={
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": 1200,
+            },
+            timeout=60
+        )
+        data = resp.json()
+        content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+        return content
+    except Exception as e:
+        print(f"❌ Erro: {e}")
+        return ""
 
-            text = resp.json()["choices"][0]["message"]["content"]
-            try:
-                data = json.loads(text)
-                content = data
-                model_used = model
-                break
-            except Exception:
-                log(f"⚠️  {model} retornou JSON inválido, ignorando.")
-                continue
-        except Exception as e:
-            log(f"⚠️  Erro ao contactar modelo {model}: {e}")
 
-    if not content:
-        log("❗ Nenhum modelo válido → usando fallback textual.")
-        content = {
-            "title": topic,
-            "description": f"Latest insights about {topic}.",
-            "tags": [topic],
-            "body": f"# {topic}\n\nAutomated article generation failed. This is a placeholder content for {topic}."
-        }
+def save_article(slug, title, description, tags, body):
+    """Guarda artigo com front matter fixo e imagens com /images/"""
+    os.makedirs(f"{BASE_PATH}/content/posts", exist_ok=True)
 
-    # ---- Cria o artigo Markdown ----
-    title = content.get("title", topic)
-    description = content.get("description", f"Insights about {topic}.")
-    tags = content.get("tags", [topic])
-    date = datetime.now().isoformat()
-    canonical = f"{SITE_URL}/posts/{slug}/"
+    image_name = f"{slug}.jpg"
+    image_url = f"/images/{image_name}"
 
-    with open(filename, "w") as f:
-        f.write(f"""---
+    fm = f"""---
 title: "{title}"
-date: {date}
+date: {datetime.now().isoformat()}
 draft: false
 slug: "{slug}"
 description: "{description}"
 keywords: {tags}
 tags: {tags}
-images: ["/images/{slug}.jpg"]
-canonicalURL: "{canonical}"
+featured_image: "{image_url}"
+canonicalURL: "{SITE_URL}/posts/{slug}/"
 og_title: "{title}"
 og_description: "{description}"
-og_image: "/images/{slug}.jpg"
+og_image: "{image_url}"
 twitter_card: "summary_large_image"
 twitter_title: "{title}"
 twitter_description: "{description}"
-twitter_image: "/images/{slug}.jpg"
-author: "TrendFind Autopilot"
+twitter_image: "{image_url}"
 ---
+{body}
+"""
+    path = f"{BASE_PATH}/content/posts/{slug}.md"
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(fm)
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] ✅ Artigo criado e salvo: {path}")
 
-{content.get("body", "")}
-""")
 
-    log(f"✅ Artigo criado: {filename}")
-    log("🏁 Processo concluído.")
+def main():
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] 🚀 Iniciando geração automática (TrendFind Autopilot v5.2)...")
+
+    topic = random.choice(TOPICS)
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] 🧠 Tópico: {topic}")
+
+    content = generate_article(topic)
+    if not content:
+        print("❌ Nenhum conteúdo gerado.")
+        return
+
+    # Parse simplificado do JSON
+    import json
+    try:
+        data = json.loads(content.strip("` \n"))
+        title = data.get("title", topic)
+        description = data.get("description", f"Latest insights about {topic}.")
+        tags = data.get("tags", [topic])
+        body = data.get("body", f"# {topic}\n\n{content}")
+    except Exception:
+        title = topic
+        description = f"Latest insights about {topic}."
+        tags = [topic]
+        body = f"# {topic}\n\n{content}"
+
+    slug = title.lower().replace(" ", "-").replace(":", "").replace("/", "")
+    save_article(slug, title, description, tags, body)
+
+    # Geração da imagem
+    img_path = f"{BASE_PATH}/static/images/{slug}.jpg"
+    os.makedirs(os.path.dirname(img_path), exist_ok=True)
+    unsplash_url = f"https://source.unsplash.com/featured/1200x630/?{topic.replace(' ', ',')}"
+    try:
+        img_data = requests.get(unsplash_url).content
+        with open(img_path, "wb") as f:
+            f.write(img_data)
+        print(f"[{datetime.now().strftime('%H:%M:%S')}] 🖼️ Imagem salva: {img_path}")
+    except Exception as e:
+        print(f"⚠️ Falha ao gerar imagem: {e}")
 
 
 if __name__ == "__main__":
