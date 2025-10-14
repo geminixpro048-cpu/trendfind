@@ -54,3 +54,6 @@ homeInfoParams = false
   name = "About"
   url = "/about/"
   weight = 3
+
+[params.assets]
+  css = ["css/stylesheet.css"]
