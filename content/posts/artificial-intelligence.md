@@ -6,7 +6,7 @@ slug: "artificial-intelligence"
 description: "Latest insights about Artificial Intelligence."
 keywords: ["Artificial", "Intelligence", "General", "Future", "Narrow"]
 tags: ["Artificial", "Intelligence", "General", "Future", "Narrow"]
-featured_image: "/images/artificial-intelligence.jpg"
+featured_image: "/images/default.jpg"
 canonicalURL: "https://www.trendfind.online/posts/artificial-intelligence/"
 og_title: "Artificial Intelligence"
 og_description: "Latest insights about Artificial Intelligence."

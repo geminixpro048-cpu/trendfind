@@ -6,7 +6,7 @@ slug: "s-json"
 description: "{"
 keywords: ["Futurism", "Marinetti", "Artists", "Shaping", "World"]
 tags: ["Futurism", "Marinetti", "Artists", "Shaping", "World"]
-featured_image: "/images/s-json.jpg"
+featured_image: "/images/default.jpg"
 canonicalURL: "https://www.trendfind.online/posts/s-json/"
 og_title: "<s> ```json"
 og_description: "{"

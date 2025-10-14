@@ -6,7 +6,7 @@ slug: "the-future-of-urban-living"
 description: "Discover how smart cities leverage technology to improve urban living, sustainability, and efficiency. Explore key innovations in smart cities today.,"
 keywords: ["Smart", "Cities", "Future", "Urban", "Living"]
 tags: ["Smart", "Cities", "Future", "Urban", "Living"]
-featured_image: "/images/the-future-of-urban-living.jpg"
+featured_image: "/images/default.jpg"
 canonicalURL: "https://www.trendfind.online/posts/the-future-of-urban-living/"
 og_title: "The Future of Urban Living"
 og_description: "Discover how smart cities leverage technology to improve urban living, sustainability, and efficiency. Explore key innovations in smart cities today.,"

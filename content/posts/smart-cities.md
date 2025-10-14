@@ -6,7 +6,7 @@ slug: "smart-cities"
 description: "Insights about Smart Cities."
 keywords: []
 tags: []
-featured_image: "/images/smart-cities.jpg"
+featured_image: "/images/default.jpg"
 canonicalURL: "https://www.trendfind.online/posts/smart-cities/"
 og_title: "Smart Cities"
 og_description: "Insights about Smart Cities."
