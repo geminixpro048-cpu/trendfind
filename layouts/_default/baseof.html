@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{- $site := .Site.BaseURL -}}
+    {{- $title := .Title | plainify -}}
+    {{- $desc := .Description | default .Summary | plainify | truncate 200 -}}
+    {{- $featured := .Params.featured_image | default "/images/default.jpg" -}}
+    {{- $full := "" -}}
+
+    {{- if or (hasPrefix $featured "http://") (hasPrefix $featured "https://") -}}
+      {{- $full = $featured -}}
+    {{- else -}}
+      {{- if not (hasPrefix $featured "/images/") -}}
+        {{- $featured = printf "/images/%s" (path.Base $featured) -}}
+      {{- end -}}
+      {{- $full = printf "%s%s" $site (replace $featured "^/" "" ) -}}
+    {{- end -}}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="{{ $desc }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $desc }}">
+    <meta property="og:image" content="{{ $full }}">
+    <meta property="og:image:alt" content="{{ $title }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $desc }}">
+    <meta name="twitter:image" content="{{ $full }}">
+    <meta name="twitter:image:alt" content="{{ $title }}">
+    <title>{{ $title }}</title>
+
+    {{- partial "head.html" . -}}
+  </head>
+
+  <body>
+    {{- block "main" . -}}{{- end -}}
+    {{- partial "footer.html" . -}}
+  </body>
+</html>
