@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Narrow on TrendFind</title><link>https://www.trendfind.online/tags/narrow/</link><description>Recent content in Narrow on TrendFind</description><image><title>TrendFind</title><url>https://www.trendfind.online/images/default.jpg</url><link>https://www.trendfind.online/images/default.jpg</link></image><generator>Hugo -- 0.147.0</generator><language>en-us</language><lastBuildDate>Sun, 12 Oct 2025 12:03:22 +0100</lastBuildDate><atom:link href="https://www.trendfind.online/tags/narrow/index.xml" rel="self" type="application/rss+xml"/><item><title>Artificial Intelligence</title><link>https://www.trendfind.online/posts/artificial-intelligence/</link><pubDate>Sun, 12 Oct 2025 12:03:22 +0100</pubDate><guid>https://www.trendfind.online/posts/artificial-intelligence/</guid><description>Latest insights about Artificial Intelligence.</description><content:encoded><![CDATA[<h1 id="artificial-intelligence-the-future-of-human-machine-interaction">Artificial Intelligence: The Future of Human-Machine Interaction</h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Narrow on TrendFind</title>
+    <link>http://localhost:1313/tags/narrow/</link>
+    <description>Recent content in Narrow on TrendFind</description>
+    <image>
+      <title>TrendFind</title>
+      <url>http://localhost:1313/images/default.jpg</url>
+      <link>http://localhost:1313/images/default.jpg</link>
+    </image>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Oct 2025 12:03:22 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/narrow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Artificial Intelligence</title>
+      <link>http://localhost:1313/posts/artificial-intelligence/</link>
+      <pubDate>Sun, 12 Oct 2025 12:03:22 +0100</pubDate>
+      <guid>http://localhost:1313/posts/artificial-intelligence/</guid>
+      <description>Latest insights about Artificial Intelligence.</description>
+      <content:encoded><![CDATA[<h1 id="artificial-intelligence-the-future-of-human-machine-interaction">Artificial Intelligence: The Future of Human-Machine Interaction</h1>
 <h2 id="introduction-to-artificial-intelligence">Introduction to Artificial Intelligence</h2>
 <p>Artificial Intelligence (AI) is a transformative technology that enables machines to simulate human intelligence processes, including learning, reasoning, problem-solving, and decision-making. AI has evolved from a niche academic discipline into a global phenomenon, reshaping industries from healthcare to finance, and from transportation to entertainment.</p>
 <p>AI can be broadly categorized into two types: <strong>Narrow AI</strong> and <strong>General AI</strong>. Narrow AI is designed to perform a narrow task (e.g., facial recognition or internet searches), while General AI possesses the ability to perform any intellectual task that a human can do—though this remains largely theoretical.</p>
@@ -36,4 +57,7 @@
 <p>Embracing AI responsibly will define the next era of human-machine collaboration, where technology enhances—not replaces—human potential.</p>
 <hr>
 <p>Would you like any modifications or additional sections?</p>
-]]></content:encoded></item></channel></rss>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
